@@ -18,9 +18,8 @@ router.get('/', (req,res)=>{
 router.post('/', (req,res)=>{
     const queryText = `INSERT INTO feedback (feeling, understanding, support, comments)
     VALUES ($1, $2, $3, $4);`;
-    const feedback = req.body;
-
-    pool.query(queryText, [feedback.feeling, feedback.understanding, feedback.support, feedback.comments])
+    const feedbackData = req.body;
+    pool.query(queryText, [feedbackData.feeling, feedbackData.understanding, feedbackData.support, feedbackData.comments])
     .then (dBResponse => {
         console.log('Database POST response', dBResponse);
         res.sendStatus(201);

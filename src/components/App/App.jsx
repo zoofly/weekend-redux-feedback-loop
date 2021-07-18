@@ -13,16 +13,6 @@ import Submission from '../Submission/Submission';
 
 function App() {
 
-// const sendfeedback = () => {
-//   axios.put('/api/feedback')
-//   .then ( res => {
-//     dispatch({
-//       type: 'POST_FEEDBACK'
-//       payload: 
-//     })
-//   })
-// }
-
 
   return (
     <div className='App'>

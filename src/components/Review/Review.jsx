@@ -6,22 +6,22 @@ import axios from 'axios';
 
 function Review() {
 
-    const reviewFeedback = useSelector(store => store );
+    // const feelings = useSelector(store => store.feelingsFeedback );
+    // const understanding = useSelector(store => store.understandingFeedback );
+    // const support = useSelector(store => store.supportFeedback );
+    // const comments = useSelector(store => store.commentsFeedback );
+
+    const feedback = useSelector(store => store);
     
     const history = useHistory();
 
     //dispatch is used to talk to redux from react
     const dispatch = useDispatch();
 
-    
 
-    useEffect(() => {
-        getFeedback();
-      }, []);
-      
-      
-      const getFeedback = () => {
-        axios.post('/')
+    const handleSubmit = () => {
+        event.preventDefault();
+        axios.post('/feedback', feedback)
         .then( res => {
           console.log('Successfully posted feedback', res);
         
@@ -32,15 +32,17 @@ function Review() {
       
 
     return(
+        <>
         <div>
             <h1> Review Your Feedback </h1>
-            <p> Feelings: {reviewFeedback.feelings} </p>
-            <p> Understanding: {reviewFeedback.understanding} </p>
-            <p> Support: {reviewFeedback.support} </p>
-            <p> Comments: {reviewFeedback.comment} </p>
-        
+            <p> Feelings: {feedback.feeling} </p>
+            <p> Understanding: {feedback.understanding} </p>
+            <p> Support: {feedback.support} </p>
+            <p> Comments: {feedback.comments} </p>
+            <button type= 'submit' onClick= {handleSubmit}> Submit Feedback </button>
 
         </div>
+        </>
 
     )
 }

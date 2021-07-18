@@ -8,7 +8,7 @@ import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware} from 'redux';
 
 //reducer(s)
-const feelingsFeedback = (state = {}, action) => {
+const feelingsFeedback = (state = 0, action) => {
     if (action.type === 'ADD_FEELING_SCALE'){
         return action.payload
     }
@@ -16,7 +16,7 @@ const feelingsFeedback = (state = {}, action) => {
     
 }
 
-const understandingFeedback = (state = {}, action) => {
+const understandingFeedback = (state = 0, action) => {
     if (action.type === 'ADD_UNDERSTANDING_SCALE'){
         return action.payload
     }
@@ -24,7 +24,7 @@ const understandingFeedback = (state = {}, action) => {
     
 }
 
-const supportFeedback = (state = {}, action) => {
+const supportFeedback = (state = 0, action) => {
     if (action.type === 'ADD_SUPPORT_SCALE'){
         return action.payload
     }
@@ -32,7 +32,7 @@ const supportFeedback = (state = {}, action) => {
     
 }
 
-const commentsFeedback = (state = {}, action) => {
+const commentsFeedback = (state = '', action) => {
     if (action.type === 'ADD_COMMENT'){
         return action.payload
     }
