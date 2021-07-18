@@ -3,7 +3,7 @@ import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
 
-function Feelings() {
+function Review(getFeedback) {
 
     const [feelingScale, setFeelingScale]= useState('');
 
@@ -17,7 +17,7 @@ function Feelings() {
                 payload: {feelingScale}
             });
             
-            history.push('/understanding')
+            history.push('/understanding');
 
         }
     }
@@ -25,17 +25,14 @@ function Feelings() {
     //dispatch is used to talk to redux from react
     const dispatch = useDispatch();
 
-    //history is used to be able to change user location
-    const history = useHistory();
-
 
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <h1> How are you feeling today? </h1>
                 <label> Rate your feelings from 1-5 for today. </label>
                 <input 
                 type="number" 
+                placeholder="Please rate between 1-5. 5 being good and 1 being bad."
                 value= {feelingScale}
                 onChange= {event => setFeelingScale(event.target.value)}
                 />
@@ -49,4 +46,4 @@ function Feelings() {
     )
 }
 
-export default Feelings;
+export default Review;

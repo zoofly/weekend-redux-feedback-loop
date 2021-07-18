@@ -1,24 +1,48 @@
+import {useDispatch} from 'react-redux';
+import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
+
 
 function Comment() {
 
+    const [comment, setComment]= useState('');
 
-    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+            dispatch({
+                type: 'ADD_FEELING_SCALE',
+                payload: {feelingScale}
+            });
+            
+            history.push('/review');
+        }
+
+
+    //dispatch is used to talk to redux from react
+    const dispatch = useDispatch();
+
+    //history is used to be able to change user location
+    const history = useHistory();
+
+
     return(
         <div>
-        <form onSubmit={handleSubmit}>
-            <label> Rate your feelings from 1-5 for today. </label>
-            <input 
-            type="number" 
-            placeholder="Please rate between 1-5. 5 being good and 1 being bad."
-            value= {feelingScale}
-            onChange= {event => setFeelingScale(event.target.value)}
-            />
+            <form onSubmit={handleSubmit}>
+                <h1> Any additional questions or comments can be left using the form below. </h1>
+                <label> Comments </label>
+                <input 
+                type="text" 
+                placeholder="Enter comment here."
+                value= {comment}
+                onChange= {event => setComment(event.target.value)}
+                />
 
-            <button type="submit"> Next </button>
-        </form>
+                <button type="submit"> Next </button>
+            </form>
 
 
-    </div>
+        </div>
+
     )
 }
 
