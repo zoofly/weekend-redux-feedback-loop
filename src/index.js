@@ -16,11 +16,46 @@ const feelingsFeedback = (state = {}, action) => {
     
 }
 
+const understandingFeedback = (state = {}, action) => {
+    if (action.type === 'ADD_UNDERSTANDING_SCALE'){
+        return action.payload
+    }
+    return state
+    
+}
+
+const supportFeedback = (state = {}, action) => {
+    if (action.type === 'ADD_SUPPORT_SCALE'){
+        return action.payload
+    }
+    return state
+    
+}
+
+const commentsFeedback = (state = {}, action) => {
+    if (action.type === 'ADD_COMMENT'){
+        return action.payload
+    }
+    return state
+    
+}
+
+// const review = (state = {}, action) => {
+//     if (action.type === 'ADD_FEELING_SCALE'){
+//         return action.payload
+//     }
+//     return state
+    
+// }
+
 
 //store
 let storeInstance = createStore (
     combineReducers({
         feelingsFeedback,
+        understandingFeedback,
+        supportFeedback,
+        commentsFeedback,
     }),
     applyMiddleware(logger)
 )

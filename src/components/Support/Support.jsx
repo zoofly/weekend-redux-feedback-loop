@@ -13,7 +13,7 @@ function Support() {
             alert('Please enter a number from 1-5');
         } else {
             dispatch({
-                type: 'ADD_FEELING_SCALE',
+                type: 'ADD_SUPPORT_SCALE',
                 payload: {supportScale}
             });
             

@@ -8,7 +8,18 @@ import Understanding from "../Understanding/Understanding";
 import Support from "../Support/Support";
 import Comment from "../Comment/Comment";
 
-axios.get('/')
+const reviewFeedback = () => {
+  axios.get('/review')
+  .then( res => {
+    dispatch({
+      type: 'GET_FEEDBACK',
+      payload: res.data
+    }) 
+    .catch( error =>{
+      console.log('AXIOS GET ERROR', error);
+    })
+  })
+}
 
 function App() {
 

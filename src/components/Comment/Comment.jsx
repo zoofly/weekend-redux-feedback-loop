@@ -10,8 +10,8 @@ function Comment() {
     const handleSubmit = (event) => {
         event.preventDefault();
             dispatch({
-                type: 'ADD_FEELING_SCALE',
-                payload: {feelingScale}
+                type: 'ADD_COMMENT',
+                payload: {comment}
             });
             
             history.push('/review');
