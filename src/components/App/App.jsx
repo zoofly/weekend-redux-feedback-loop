@@ -7,9 +7,19 @@ import Feelings from "../Feelings/Feelings";
 import Understanding from "../Understanding/Understanding";
 import Support from "../Support/Support";
 import Comment from "../Comment/Comment";
+import Review from "../Review/Review";
+
+
+
+function App() {
+
+useEffect(() => {
+  reviewFeedback();
+}, []);
+
 
 const reviewFeedback = () => {
-  axios.get('/review')
+  axios.get('/api/review')
   .then( res => {
     dispatch({
       type: 'GET_FEEDBACK',
@@ -21,7 +31,8 @@ const reviewFeedback = () => {
   })
 }
 
-function App() {
+
+
 
   return (
     <div className='App'>
@@ -34,6 +45,7 @@ function App() {
         <Route path='/understanding' component={Understanding}/>
         <Route path='/support' component={Support}/>
         <Route path='/comment' component={Comment}/>
+        <Route path='/review' component={Review}/>
       </Router>
       
     </div>
