@@ -14,7 +14,7 @@ function Understanding() {
         } else {
             dispatch({
                 type: 'ADD_UNDERSTANDING_SCALE',
-                payload: {understandingScale}
+                payload: understandingScale
             });
             setUnderstandingScale('');
             history.push('/support');
@@ -36,7 +36,6 @@ function Understanding() {
                 <label> Rate your understanding from 1-5 for today. </label>
                 <input 
                 type="number" 
-                value= {understandingScale}
                 onChange= {event => setUnderstandingScale(event.target.value)}
                 />
 

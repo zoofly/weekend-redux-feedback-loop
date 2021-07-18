@@ -3,16 +3,16 @@ import React, {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 
 function Submission() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-        dispatch({
-            type: 'ADD_FEELING_SCALE',
-            payload: {feelingScale}
-        });
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//         dispatch({
+//             type: 'ADD_FEELING_SCALE',
+//             payload: {feelingScale}
+//         });
         
-        history.push('/submission');
+//         history.push('/submission');
 
-    }
+//     }
   return (
       <>
         <h1> Feedback! </h1>

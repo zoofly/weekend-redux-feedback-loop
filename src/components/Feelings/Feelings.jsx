@@ -14,7 +14,7 @@ function Feelings() {
         } else {
             dispatch({
                 type: 'ADD_FEELING_SCALE',
-                payload: {feelingScale}
+                payload: feelingScale
             });
             setFeelingScale('');
             history.push('/understanding')
@@ -36,7 +36,6 @@ function Feelings() {
                 <label> Rate your feelings from 1-5 for today. </label>
                 <input 
                 type="number" 
-                value= {feelingScale}
                 onChange= {event => setFeelingScale(event.target.value)}
                 />
 

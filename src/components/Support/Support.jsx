@@ -14,7 +14,7 @@ function Support() {
         } else {
             dispatch({
                 type: 'ADD_SUPPORT_SCALE',
-                payload: {supportScale}
+                payload: supportScale
             });
             setSupportScale('');
             history.push('/comment');
@@ -36,7 +36,6 @@ function Support() {
                 <label> Rate your support from 1-5 for today. </label>
                 <input 
                 type="number" 
-                value= {supportScale}
                 onChange= {event => setSupportScale(event.target.value)}
                 />
 

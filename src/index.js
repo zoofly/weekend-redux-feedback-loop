@@ -40,14 +40,6 @@ const commentsFeedback = (state = '', action) => {
     
 }
 
-// const reviewFeedback = (state = {}, action) => {
-//     if (action.type === 'ADD_FEELING_SCALE'){
-//         return action.payload
-//     }
-//     return state
-    
-// }
-
 
 //store
 let storeInstance = createStore (

@@ -11,7 +11,7 @@ function Comment() {
         event.preventDefault();
             dispatch({
                 type: 'ADD_COMMENT',
-                payload: {comment}
+                payload: comment
             });
             setComment('');
             history.push('/review');
@@ -33,7 +33,6 @@ function Comment() {
                 <input 
                 type="text" 
                 placeholder="Enter comment here."
-                value= {comment}
                 onChange= {event => setComment(event.target.value)}
                 />
 
