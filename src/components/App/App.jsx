@@ -8,7 +8,7 @@ import Understanding from "../Understanding/Understanding";
 import Support from "../Support/Support";
 import Comment from "../Comment/Comment";
 
-
+axios.get('/')
 
 function App() {
 
@@ -20,9 +20,9 @@ function App() {
       </header>
       <Router>
         <Route path='/'exact component={Feelings}/>
-        <Route path='/2'exact component={Understanding}/>
-        <Route path='/3'exact component={Support}/>
-        <Route path='/4'exact component={Comment}/>
+        <Route path='/understanding' component={Understanding}/>
+        <Route path='/support' component={Support}/>
+        <Route path='/comment' component={Comment}/>
       </Router>
       
     </div>
