@@ -16,7 +16,7 @@ function Support() {
                 type: 'ADD_SUPPORT_SCALE',
                 payload: {supportScale}
             });
-            
+            setSupportScale('');
             history.push('/comment');
 
         }

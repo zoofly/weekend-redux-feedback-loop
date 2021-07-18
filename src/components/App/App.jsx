@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+
 import axios from 'axios';
 import './App.css';
 import { useDispatch, useSelector} from 'react-redux';
@@ -8,30 +8,20 @@ import Understanding from "../Understanding/Understanding";
 import Support from "../Support/Support";
 import Comment from "../Comment/Comment";
 import Review from "../Review/Review";
-
+import Submission from '../Submission/Submission';
 
 
 function App() {
 
-useEffect(() => {
-  reviewFeedback();
-}, []);
-
-
-const reviewFeedback = () => {
-  axios.get('/api/review')
-  .then( res => {
-    dispatch({
-      type: 'GET_FEEDBACK',
-      payload: res.data
-    }) 
-    .catch( error =>{
-      console.log('AXIOS GET ERROR', error);
-    })
-  })
-}
-
-
+// const sendfeedback = () => {
+//   axios.put('/api/feedback')
+//   .then ( res => {
+//     dispatch({
+//       type: 'POST_FEEDBACK'
+//       payload: 
+//     })
+//   })
+// }
 
 
   return (
@@ -46,6 +36,7 @@ const reviewFeedback = () => {
         <Route path='/support' component={Support}/>
         <Route path='/comment' component={Comment}/>
         <Route path='/review' component={Review}/>
+        <Route path='/submission' component={Submission} />
       </Router>
       
     </div>

@@ -16,7 +16,7 @@ function Feelings() {
                 type: 'ADD_FEELING_SCALE',
                 payload: {feelingScale}
             });
-            
+            setFeelingScale('');
             history.push('/understanding')
 
         }

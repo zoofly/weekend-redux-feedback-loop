@@ -40,7 +40,7 @@ const commentsFeedback = (state = {}, action) => {
     
 }
 
-// const review = (state = {}, action) => {
+// const reviewFeedback = (state = {}, action) => {
 //     if (action.type === 'ADD_FEELING_SCALE'){
 //         return action.payload
 //     }

@@ -13,7 +13,7 @@ function Comment() {
                 type: 'ADD_COMMENT',
                 payload: {comment}
             });
-            
+            setComment('');
             history.push('/review');
         }
 

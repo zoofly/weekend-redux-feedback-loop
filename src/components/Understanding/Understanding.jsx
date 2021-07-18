@@ -16,7 +16,7 @@ function Understanding() {
                 type: 'ADD_UNDERSTANDING_SCALE',
                 payload: {understandingScale}
             });
-            
+            setUnderstandingScale('');
             history.push('/support');
 
         }
