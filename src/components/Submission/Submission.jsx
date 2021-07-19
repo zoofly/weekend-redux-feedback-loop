@@ -1,12 +1,18 @@
+import { useSelector, useDispatch} from 'react-redux';
 import React, {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 
 function Submission() {
-  const history = useHistory();
-
-  const handleSubmit = () => {
+  const dispatch = useDispatch();
+  
+  const handleSubmit = (event) => {
     event.preventDefault();
-    history.push('/');
+        dispatch({
+            type: 'RESET',
+            payload: ''
+        });
+        
+        history.push('/');
 
     }
   return (
