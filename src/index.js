@@ -11,6 +11,8 @@ import { createStore, combineReducers, applyMiddleware} from 'redux';
 const feelingsFeedback = (state = 0, action) => {
     if (action.type === 'ADD_FEELING_SCALE'){
         return action.payload
+    } else if( action.type === 'RESET'){
+        return action.payload
     }
     return state
     
@@ -18,6 +20,8 @@ const feelingsFeedback = (state = 0, action) => {
 
 const understandingFeedback = (state = 0, action) => {
     if (action.type === 'ADD_UNDERSTANDING_SCALE'){
+        return action.payload
+    } else if( action.type === 'RESET'){
         return action.payload
     }
     return state
@@ -27,6 +31,8 @@ const understandingFeedback = (state = 0, action) => {
 const supportFeedback = (state = 0, action) => {
     if (action.type === 'ADD_SUPPORT_SCALE'){
         return action.payload
+    } else if( action.type === 'RESET'){
+        return action.payload
     }
     return state
     
@@ -34,6 +40,8 @@ const supportFeedback = (state = 0, action) => {
 
 const commentsFeedback = (state = '', action) => {
     if (action.type === 'ADD_COMMENT'){
+        return action.payload
+    } else if( action.type === 'RESET'){
         return action.payload
     }
     return state
